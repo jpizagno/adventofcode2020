@@ -15,12 +15,15 @@ def main():
             if seen_value in cached_values_2020.keys():
                 # found a hit exiting
                 print("success:  "+str(seen_value)+"x"+str(cached_values_2020[seen_value]) + "="+str(cached_values_2020[seen_value]*seen_value))
+                f.close()
                 return
             else:
                 # not a key so create one
                 key_new = 2020 - seen_value
                 cached_values_2020[key_new] = seen_value
                 line = f.readline()
+        print("no matching pairs found")
+        return
 
 
 if __name__ == "__main__":
